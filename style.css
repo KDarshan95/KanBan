@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensure consistent box model */
+}
+
+/* Toolbox Designs */
+.toolbox-cont {
+  background-color: #4b4b4b;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem; /* Add padding for better spacing */
+  gap: 2rem; /* Ensure even spacing between child elements */
+  justify-content: space-between; /* Add this to create space between items */
+}
+
+.toolbox-filter-colors {
+  background-color: #3d3d3d;
+  width: 18rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  cursor: pointer;
+  border-radius: 0.5rem; /* Smooth corners */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Add subtle animations */
+}
+
+.kanban-board {
+  background-color: #3d3d3d;
+  width: 18rem;
+  height: 3.5rem;
+  display: flex; /* Enable Flexbox */
+  justify-content: center; /* Center the text horizontally */
+  align-items: center; /* Center the text vertically */
+  margin-left: auto; /* Push the box to the far right */
+  color: white; /* Set the text color to white */
+  font-weight: bold; /* Make the text bold */
+  font-size: 1.6rem; /* Adjust font size for better visibility */
+  border-radius: 0.5rem; /* Rounded corners */
+}
+
+.toolbox-filter-colors:hover {
+  background-color: #505050; /* Slightly lighten on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.color-box {
+  height: 1.5rem;
+  width: 3rem;
+  border-radius: 0.25rem; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  transition: transform 0.2s ease; /* Hover animation */
+}
+
+.color-box:hover {
+  transform: scale(1.1); /* Enlarge slightly on hover */
+}
+
+.action-btn-cont {
+  background-color: #3d3d3d;
+  height: 3.5rem;
+  width: 8rem;
+  display: flex;
+  border-radius: 0.5rem; /* Rounded corners */
+  overflow: hidden; /* Ensure buttons don't overflow */
+}
+
+.action-btn-cont > * {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem; /* Slightly adjust size for better spacing */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add hover transition */
+}
+
+.action-btn-cont > *:hover {
+  background-color: #505050; /* Highlight on hover */
+}
+
+/* Filter colors */
+.lightpink {
+  background-color: lightpink;
+}
+
+.lightblue {
+  background-color: lightblue;
+}
+
+.lightgreen {
+  background-color: lightgreen;
+}
+
+.black {
+  background-color: black;
+}
+
+/* Modal container */
+.modal-cont {
+  height: 50vh;
+  width: 45vw;
+  display: none;
+  position: fixed;
+  top: 30%;
+  left: 27%;
+  /* transform: translate(-50%, -30%); */
+  border-radius: 0.5rem; /* Smooth corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+  overflow: hidden; /* Prevent overflow */
+  z-index: 100; /* Ensure it stays above other elements */
+}
+
+.text-area {
+  height: 100%;
+  width: 70%;
+  background-color: lightgray;
+  resize: none;
+  border: none;
+  outline: none;
+  font-size: 1.5rem; /* Adjust font size */
+  padding: 1rem; /* Add padding for text */
+  line-height: 1.5; /* Improve readability */
+}
+
+.priority-color-cont {
+  height: 100%;
+  background-color: #4b4b4b;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1rem 0; /* Add padding for spacing */
+}
+
+.priority-color {
+  height: 3rem;
+  width: 5rem;
+  border-radius: 0.5rem; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow */
+}
+
+/* Ticket Design */
+.main-cont {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next row */
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.ticket-cont {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 12rem;
+  width: 18rem;
+  background-color: #ffffff;
+  border-radius: 0.5rem; /* Smooth corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+  overflow: hidden; /* Prevent content overflow */
+}
+
+.ticket-color {
+  height: 1.5rem;
+  flex-shrink: 0; /* Prevent shrinking when content grows */
+  cursor: pointer;
+}
+
+.ticket-id {
+  background-color: #f4f4f4;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold; /* Highlight ticket ID */
+  font-size: 1rem; /* Adjust text size */
+  flex-shrink: 0; /* Prevent shrinking when content grows */
+}
+
+.task-area {
+  flex-grow: 1; /* Allow task area to occupy available space */
+  padding: 1rem; /* Add padding for readability */
+  font-size: 1.2rem; /* Adjust text size */
+  overflow-y: auto; /* Enable scrolling if the text exceeds the allocated space */
+  word-wrap: break-word; /* Ensure long words break properly */
+  line-height: 1.2; /* Improve readability */
+  font-weight: lighter;
+}
+
+.ticket-lock {
+  position: absolute; /* Fix it at the bottom-right corner of the ticket */
+  bottom: 8px;
+  right: 8px;
+  font-size: 1.5rem;
+  z-index: 1; /* Ensure it stays above the content */
+  cursor: pointer;
+}
+
+.active {
+  border: 3px solid white;
+  box-shadow: 0 0 6px red; /* Add glowing effect */
+}
